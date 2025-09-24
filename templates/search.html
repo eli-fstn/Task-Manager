@@ -1,0 +1,21 @@
+<!doctype>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+<form method="POST" action="/search">
+    <input type="text" name="keyword" placeholder="Search tasks" required>
+    <button type="submit">Search</button>
+</form>
+<hr>
+<h1>Search Results</h1>
+<ul>
+  {% for task in tasks %}
+    <li>{{ task.subject }} | {{ task.content }} - {{ task.date_created }}</li>
+  {% else %}
+    <li>No tasks found.</li>
+  {% endfor %}
+</ul>
+</body>
+</html>

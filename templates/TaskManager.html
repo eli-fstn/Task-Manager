@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+  <title>My Task Manager</title>
+</head>
+<body class="min-h-screen flex flex-col items-center p-6">
+<h1 class="text-3xl font-bold text-gray-800 mb-6">TASK MANAGER</h1>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
