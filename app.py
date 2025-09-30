@@ -69,7 +69,7 @@ def search():
         results = Todo.query.filter(Todo.content.like(f"%{keyword}%")).all()
         return render_template("search.html", tasks=results)
     return render_template("search.html")
- 
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
