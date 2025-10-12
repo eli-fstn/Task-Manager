@@ -39,7 +39,6 @@ def add_Task():
 @app.route("/delete/<int:id>")
 def delete(id):
     task_to_delete = Todo.query.get_or_404(id)
-    
     try:
         db.session.delete(task_to_delete)
         db.session.commit()
@@ -50,7 +49,6 @@ def delete(id):
 @app.route("/update/<int:id>", methods=["POST", "GET"])
 def update(id):
     task = Todo.query.get_or_404(id)
-    
     if request.method == "POST":
         task.content = request.form.get("content")
         task.subject = request.form.get("subject")
